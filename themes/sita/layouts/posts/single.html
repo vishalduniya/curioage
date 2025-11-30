@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <main>
+    <article>
+      <h1 class="title">{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<h3 class="subtitle">{{ . }}</h3>{{ end }}
+      {{ partial "postMetaDetailed.html" . }}
+      
+      <!-- TOC -->
+      {{ if isset .Params "toc" }}
+      <div class="toc">
+        <strong>Table of contents:</strong>
+        {{ .TableOfContents }}
+      </div>
+      {{ end }}
+      
+      <div class="content">{{ .Content }}</div>
+    </article>
+    {{- partial "comment.html" . -}}
+  </main>
+{{ end }}

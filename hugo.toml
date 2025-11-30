@@ -1,0 +1,104 @@
+baseURL = "https://curioage.github.io"
+languageCode = "en-us"
+theme = "sita"
+title = "Curioage"
+summaryLength = 20
+
+
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+# [services]
+# To enable Google Analytics 4 (gtag.js) provide G-MEASUREMENT_ID below.
+# To disable Google Analytics, simply leave the field empty or remove the next two lines
+#  [services.googleAnalytics]
+#    id = '' # G-MEASUREMENT_ID
+
+# To enable Disqus comments, provide Disqus Shortname below.
+# To disable Disqus comments, simply leave the field empty or remove the next two lines
+# [services.disqus]
+# shortname = "varta-1"
+
+#[[module.mounts]]
+#   source = 'static/images'
+#    target = 'static/images'
+
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 2
+
+[[menu.main]]
+identifier = "posts"
+name = "Posts"
+url = "/posts/"
+weight = 3
+
+[[menu.main]]
+identifier = "categories"
+name = "Categories"
+url = "/categories/"
+weight = 4
+
+[[menu.main]]
+identifier = "tags"
+name = "Tags"
+url = "/tags/"
+weight = 5
+
+[[menu.main]]
+identifier = "rss"
+name = "RSS"
+url = "/index.xml"
+weight = 6
+
+[taxonomies]
+  category = "categories"
+  tags = "tags"
+
+[params]
+	abbrDateFmt = "Jan 2"
+	author = "Vishal Kumar"
+	brandIconFile = "images/brandIcon.svg"
+	dateFmt = "2006-01-02"
+	subtitle = "Memo & Musings"
+	toc = true
+	math = true
+
+
+[[params.social]]
+name = "YouTube"
+url = "https://youtube.com/@curioage1204"
+
+[[params.social]]
+name = "Linkedin"
+url = "https://linkedin.com/in/vishal-kumar-01816b34/"
+
+
+[[params.social]]
+name = "X"
+icon = "twitter"
+url = "https://x.com/vishal_kr15"
+
+[[params.social]]
+name = "Google Scholar"
+url = "https://scholar.google.co.in/citations?hl=en&user=WkOnSlkAAAAJ"
+

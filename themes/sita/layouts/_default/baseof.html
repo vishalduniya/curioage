@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{ partial "head.html" . }}
+  <body>
+    <div id="root">
+      {{ partial "header.html" . }}
+      <div id="content">
+        {{ block "main" . }}{{ end }}
+      </div>
+      {{ partial "footer.html" . }}
+    </div>
+  </body>
+</html>
+
+
+
+<head>
+  <!-- your existing head content -->
+  {{ if .Param "math" }}
+    {{ partialCached "math.html" . }}
+  {{ end }}
+  <!-- rest of your head content -->
+</head>
