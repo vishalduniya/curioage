@@ -2,18 +2,12 @@
   <strong>
     <span>Posted on</span>
     <time>{{ .Date.Format (default "2006-01-02 15:04:05" .Site.Params.dateFmt) }}</time>
-    {{ with .Params.categories }}
-  <span>in</span>
-  {{ range $index, $value := . }}
-    {{ if gt $index 0 }}, {{ end }}
-    <a href="{{ (site.GetPage (printf "/categories/%s" ($value | urlize))).RelPermalink }}">
-      {{ $value }}
-    </a>
-    {{ end }}
-{{ end }}
+    {{ with .Params.categories }}<span>in</span>{{ end }}
+    {{ range $key, $value := .Params.categories -}}
+      {{- if $key }}, {{ end }}
+      <a href = "{{ $.Site.BaseURL }}categories/{{ $value | urlize | lower  }}">{{$value}}</a>
+    {{- end }}
   </strong>
-  {{ with .WordCount }}<span> • {{ . }} words</span>{{ end }}
-  {{ with .ReadingTime}}<span> • {{ . }} minute read</span>{{ end }}
   {{ if and .IsPage (ne .Date .Lastmod) }}
     <div>
       Last updated on
@@ -25,7 +19,7 @@
       <span>Tags:</span>
       {{ range $key, $value := . }}
         {{- if $key }}, {{ end }}
-        <a href="{{ "/tags/" | relLangURL }}{{ $value | urlize }}">{{ . }}</a>
+        <a href = "{{ $.Site.BaseURL }}tags/{{ $value | urlize | lower  }}">{{$value}}</a>
       {{- end }}
     </div>
   {{ end }}
