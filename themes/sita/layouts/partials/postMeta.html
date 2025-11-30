@@ -38,7 +38,7 @@
     {{ with .Params.categories }}<span>in</span>{{ end }}
     {{ range $key, $value := .Params.categories -}}
       {{- if $key }}, {{ end }}
-      <a href="{{ "/categories/" | relLangURL }}{{ $value | urlize }}">{{ . }}</a>
+      <a href="{{ (site.GetPage (printf "/categories/%s" ($value | urlize))).RelPermalink }}">{{ . }}</a>
     {{- end }}
   </strong>
  {{ with .WordCount }}<span> • {{ . }} words</span>{{ end }}
@@ -48,7 +48,7 @@
       <span>Tags:</span>
       {{ range $key, $value := . }}
         {{- if $key }}, {{ end }}
-        <a href="{{ "/tags/" | relLangURL }}{{ $value | urlize }}">{{ . }}</a>
+        <a href="{{ (site.GetPage (printf "/tags/%s" ($value | urlize))).RelPermalink }}">{{ . }}</a>
       {{- end }}
     </div>
   {{ end }}

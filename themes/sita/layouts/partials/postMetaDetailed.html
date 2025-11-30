@@ -2,11 +2,15 @@
   <strong>
     <span>Posted on</span>
     <time>{{ .Date.Format (default "2006-01-02 15:04:05" .Site.Params.dateFmt) }}</time>
-    {{ with .Params.categories }}<span>in</span>{{ end }}
-    {{ range $key, $value := .Params.categories -}}
-      {{- if $key }}, {{ end }}
-      <a href="{{ "/categories/" | relLangURL }}{{ $value | urlize }}">{{ . }}</a>
-    {{- end }}
+    {{ with .Params.categories }}
+  <span>in</span>
+  {{ range $index, $value := . }}
+    {{ if gt $index 0 }}, {{ end }}
+    <a href="{{ (site.GetPage (printf "/categories/%s" ($value | urlize))).RelPermalink }}">
+      {{ $value }}
+    </a>
+    {{ end }}
+{{ end }}
   </strong>
   {{ with .WordCount }}<span> • {{ . }} words</span>{{ end }}
   {{ with .ReadingTime}}<span> • {{ . }} minute read</span>{{ end }}
