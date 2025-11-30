@@ -24,7 +24,7 @@
 @font-face {
     /* font-display: swap; */
     font-family: "Source Code Pro";
-    src: url("/fonts/sourcecodepro.ttf") format("truetype");
+    src: url("../fonts/sourcecodepro.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -32,25 +32,25 @@
 /* Consolas Font */
 @font-face {
     font-family: "Consolas";
-    src: url("/fonts/consolas_regular.TTF") format("truetype");
+    src: url("../fonts/consolas_regular.TTF") format("truetype");
 }
 
 /* Noto Sans Devanagari */
 @font-face {
     font-family: "Noto Sans Devanagari";
-    src: url("/fonts/NotoSansDevanagari.TTF") format("truetype");
+    src: url("../fonts/NotoSansDevanagari.TTF") format("truetype");
 }
 
 
 /* Inknut Antiqua */
 @font-face {
     font-family: "Inknut Antiqua Light";
-    src: url("/fonts/InknutAntiqua-Light.ttf") format("truetype");
+    src: url("../fonts/InknutAntiqua-Light.ttf") format("truetype");
 }
 
 /* Sura */
 @font-face {
     font-family: "Sura";
-    src: url("/fonts/Sura-Regular.ttf") format("truetype");
+    src: url("../fonts/Sura-Regular.ttf") format("truetype");
 }
 
